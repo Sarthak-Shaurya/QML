@@ -83,7 +83,7 @@ python sqKSVM_classifier.py
 ```
 Expected Output: Generates classification boundaries achieving ~0.9074 AUC on the Wisconsin Breast Cancer dataset.
 
-Step 2: Execute the Hybrid ASR Pipeline
+Step 2: Execute the Hybrid ASR Pipeline<br>
 <b>A. Local Prototype (PyTorch Binary Validation) </b>To visualize the 4-channel quantum feature maps and run the lightweight local CNN:
 
 ```Bash
@@ -91,7 +91,7 @@ cd step2_hybrid_asr/custom_pytorch_validation
 python plot_qvision.py      # Generates 'quantum_vision.png'
 python train_hybrid.py      # Runs the Left vs. Right binary classification
 ```
-B. Full 10-Class Cloud Benchmark (Keras Bi-LSTM) (Requires the full extracted tensor dataset placed in the data_quantum/ directory)
+<b> B. Full 10-Class Cloud Benchmark (Keras Bi-LSTM)</b> (Requires the full extracted tensor dataset placed in the data_quantum/ directory)
 
 ```Bash
 cd step2_hybrid_asr/authors_baseline
