@@ -57,7 +57,7 @@ Quantum-Hybrid-ASR/
 └── data_samples/                  # Sample data formats (Full dataset hosted externally)
     ├── sample_audio.wav           
     └── sample_tensor.npy
-
+```
 ## 🚀 Installation & Setup
 
 It is highly recommended to use a virtual environment (like `venv` or `conda`) to avoid conflicts between PyTorch and TensorFlow dependencies.
@@ -73,3 +73,4 @@ source qml_env/bin/activate
 
 # 3. Install all dependencies
 pip install -r requirements.txt
+```
