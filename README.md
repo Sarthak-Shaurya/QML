@@ -58,6 +58,18 @@ Quantum-Hybrid-ASR/
     ├── sample_audio.wav           
     └── sample_tensor.npy
 
-'''
+## 🚀 Installation & Setup
 
-##ii
+It is highly recommended to use a virtual environment (like `venv` or `conda`) to avoid conflicts between PyTorch and TensorFlow dependencies.
+
+```bash
+# 1. Clone the repository
+git clone [https://github.com/Sarthak-Shaurya/QML.git](https://github.com/Sarthak-Shaurya/QML.git)
+cd QML
+
+# 2. Create and activate a virtual environment (Linux/Mac)
+python3 -m venv qml_env
+source qml_env/bin/activate
+
+# 3. Install all dependencies
+pip install -r requirements.txt
