@@ -74,3 +74,10 @@ source qml_env/bin/activate
 # 3. Install all dependencies
 pip install -r requirements.txt
 ```
+## 💻 How to Run the Code
+
+Step 1: Execute the Clinical Baseline (sqKSVM)To run the static baseline that proves the viability of the $\log_2N$ encoding on constrained hardware:
+```bash
+cd step1_clinical_baseline
+python sqKSVM_classifier.py
+```
