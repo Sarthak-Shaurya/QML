@@ -83,4 +83,27 @@ python sqKSVM_classifier.py
 ```
 Expected Output: Generates classification boundaries achieving ~0.9074 AUC on the Wisconsin Breast Cancer dataset.
 
-Step 2:
+Step 2: Execute the Hybrid ASR Pipeline
+A. Local Prototype (PyTorch Binary Validation) To visualize the 4-channel quantum feature maps and run the lightweight local CNN:
+
+```Bash
+cd step2_hybrid_asr/custom_pytorch_validation
+python plot_qvision.py      # Generates 'quantum_vision.png'
+python train_hybrid.py      # Runs the Left vs. Right binary classification
+```
+B. Full 10-Class Cloud Benchmark (Keras Bi-LSTM) (Requires the full extracted tensor dataset placed in the data_quantum/ directory)
+
+```Bash
+cd step2_hybrid_asr/authors_baseline
+python main_qsr.py --sr 16000 --mel 1
+```
+Expected Output: 94 steps/epoch, converging to >90.0% validation accuracy by Epoch 16.
+
+Step 3: MLOps Automation
+To run the QAOA hyperparameter optimization solver or test the QSVM drift monitor on sample audio streams:
+
+```Bash
+cd step3_mlops_automation
+python qaoa_optimizer.py
+python qsvm_drift_monitor.py
+```
