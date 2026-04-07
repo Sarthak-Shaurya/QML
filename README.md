@@ -107,3 +107,12 @@ cd step3_mlops_automation
 python qaoa_optimizer.py
 python qsvm_drift_monitor.py
 ```
+
+## 📚 References & Acknowledgements
+Clinical Baseline: S. Moradi, C. Brandner, et al., "Clinical data classification with noisy intermediate scale quantum computers," Scientific Reports, vol. 12, no. 1851, 2022.
+
+ASR Benchmark Architecture: C.-H. H. Yang, J. Qi, et al., "Decentralizing Feature Extraction with Quantum Convolutional Neural Network for Automatic Speech Recognition," arXiv:2010.13309, 2021.
+
+QAOA: E. Farhi, J. Goldstone, and S. Gutmann, "A Quantum Approximate Optimization Algorithm," arXiv:1411.4028, 2014.
+
+We extend our gratitude to the authors of the original QCNN ASR repository for providing the Keras/Qiskit foundation upon which we built our decoupled pipeline and automation wrappers.
