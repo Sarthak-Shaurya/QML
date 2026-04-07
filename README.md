@@ -38,21 +38,22 @@ Quantum-Hybrid-ASR/
 ├── assets/                        # Visualizations and result graphs
 │
 ├── step1_clinical_baseline/       # Step 1: Clinical Data Proof of Concept
-│   └── sqKSVM_classifier.py       # Linear-time encoding quantum kernel SVM
+│   └── classifier.py       # Linear-time encoding quantum kernel SVM
 │
 ├── step2_hybrid_asr/              # Step 2: Continuous Audio & Speech Recognition
 │   ├── authors_baseline/          # (Cloud Keras) 10-Class Sequence Training
 │   │   ├── main_qsr.py            # Main training loop (Bi-LSTM / Softmax Attention)
-│   │   ├── model.py               # Classical backend architectures
+│   │   ├── models.py               # Classical backend architectures
 │   │   └── helper_q_tool.py       # Pennylane/Qiskit quantum circuit generator
 │   │
 │   └── custom_pytorch_validation/ # (Local PyTorch) Engineering Prototype
+│       ├── download_data.py       # Download the required data
 │       ├── train_hybrid.py        # Custom binary classification for local hardware test
 │       └── plot_qvision.py        # Generates the 4-channel Pauli-Z feature maps
 │
 ├── step3_mlops_automation/        # Step 3: Novelty & Pipeline Automation
-│   ├── qaoa_optimizer.py          # QUBO formulated hyperparameter tuning
-│   └── qsvm_drift_monitor.py      # Real-time out-of-distribution audio flagging
+│   ├── qaoa_hpo.py                # QUBO formulated hyperparameter tuning
+│   └── qsvm_monitor.py            # Real-time out-of-distribution audio flagging
 │
 └── data_samples/                  # Sample data formats (Full dataset hosted externally)
     ├── sample_audio.wav           
@@ -79,7 +80,7 @@ pip install -r requirements.txt
 <b> Step 1: Execute the Clinical Baseline (sqKSVM)</b> To run the static baseline that proves the viability of the $\log_2N$ encoding on constrained hardware:
 ```bash
 cd step1_clinical_baseline
-python sqKSVM_classifier.py
+python classifier.py
 ```
 Expected Output: Generates classification boundaries achieving ~0.9074 AUC on the Wisconsin Breast Cancer dataset.
 
@@ -88,6 +89,7 @@ Expected Output: Generates classification boundaries achieving ~0.9074 AUC on th
 
 ```Bash
 cd step2_hybrid_asr/custom_pytorch_validation
+python download_data.py     # Downloads the required data
 python plot_qvision.py      # Generates 'quantum_vision.png'
 python train_hybrid.py      # Runs the Left vs. Right binary classification
 ```
@@ -104,15 +106,15 @@ To run the QAOA hyperparameter optimization solver or test the QSVM drift monito
 
 ```Bash
 cd step3_mlops_automation
-python qaoa_optimizer.py
-python qsvm_drift_monitor.py
+python qaoa_hpo.py
+python qsvm_monitor.py
 ```
 
 ## 📚 References & Acknowledgements
-Clinical Baseline: S. Moradi, C. Brandner, et al., "Clinical data classification with noisy intermediate scale quantum computers," Scientific Reports, vol. 12, no. 1851, 2022.
+S. Moradi, C. Brandner, et al., "Clinical data classification with noisy intermediate scale quantum computers," Scientific Reports, vol. 12, no. 1851, 2022.
 
-ASR Benchmark Architecture: C.-H. H. Yang, J. Qi, et al., "Decentralizing Feature Extraction with Quantum Convolutional Neural Network for Automatic Speech Recognition," arXiv:2010.13309, 2021.
+C.-H. H. Yang, J. Qi, et al., "Decentralizing Feature Extraction with Quantum Convolutional Neural Network for Automatic Speech Recognition," arXiv:2010.13309, 2021.
 
-QAOA: E. Farhi, J. Goldstone, and S. Gutmann, "A Quantum Approximate Optimization Algorithm," arXiv:1411.4028, 2014.
+E. Farhi, J. Goldstone, and S. Gutmann, "A Quantum Approximate Optimization Algorithm," arXiv:1411.4028, 2014.
 
 We extend our gratitude to the authors of the original QCNN ASR repository for providing the Keras/Qiskit foundation upon which we built our decoupled pipeline and automation wrappers.
