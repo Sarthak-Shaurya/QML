@@ -6,8 +6,6 @@
 ![Qiskit](https://img.shields.io/badge/Qiskit-0.44%2B-6929c4)
 ![PennyLane](https://img.shields.io/badge/PennyLane-0.32%2B-000000)
 
-**Indian Institute of Technology (IIT) Roorkee** **Department of Electronics & Communication Engineering**
-
 **Authors:**
 * Sarthak Shaurya (22116082)
 * Aryan Chaudhary (22115031)
@@ -59,3 +57,6 @@ Quantum-Hybrid-ASR/
 └── data_samples/                  # Sample data formats (Full dataset hosted externally)
     ├── sample_audio.wav           
     └── sample_tensor.npy
+
+
+## Installation and Setup
