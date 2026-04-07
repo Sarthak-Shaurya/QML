@@ -81,3 +81,6 @@ Step 1: Execute the Clinical Baseline (sqKSVM)To run the static baseline that pr
 cd step1_clinical_baseline
 python sqKSVM_classifier.py
 ```
+Expected Output: Generates classification boundaries achieving ~0.9074 AUC on the Wisconsin Breast Cancer dataset.
+
+Step 2:
