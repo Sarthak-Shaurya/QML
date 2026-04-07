@@ -76,14 +76,14 @@ pip install -r requirements.txt
 ```
 ## 💻 How to Run the Code
 
-Step 1: Execute the Clinical Baseline (sqKSVM)To run the static baseline that proves the viability of the $\log_2N$ encoding on constrained hardware:
+<b> Step 1: Execute the Clinical Baseline (sqKSVM)</b> To run the static baseline that proves the viability of the $\log_2N$ encoding on constrained hardware:
 ```bash
 cd step1_clinical_baseline
 python sqKSVM_classifier.py
 ```
 Expected Output: Generates classification boundaries achieving ~0.9074 AUC on the Wisconsin Breast Cancer dataset.
 
-Step 2: Execute the Hybrid ASR Pipeline<br>
+<b> Step 2: Execute the Hybrid ASR Pipeline</b> <br>
 <b>A. Local Prototype (PyTorch Binary Validation) </b>To visualize the 4-channel quantum feature maps and run the lightweight local CNN:
 
 ```Bash
@@ -99,7 +99,7 @@ python main_qsr.py --sr 16000 --mel 1
 ```
 Expected Output: 94 steps/epoch, converging to >90.0% validation accuracy by Epoch 16.
 
-Step 3: MLOps Automation
+<b> Step 3: MLOps Automation</b>
 To run the QAOA hyperparameter optimization solver or test the QSVM drift monitor on sample audio streams:
 
 ```Bash
