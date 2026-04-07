@@ -83,8 +83,8 @@ python sqKSVM_classifier.py
 ```
 Expected Output: Generates classification boundaries achieving ~0.9074 AUC on the Wisconsin Breast Cancer dataset.
 
-Step 2: Execute the Hybrid ASR Pipeline<n>
-A. Local Prototype (PyTorch Binary Validation) To visualize the 4-channel quantum feature maps and run the lightweight local CNN:
+Step 2: Execute the Hybrid ASR Pipeline
+<b>A. Local Prototype (PyTorch Binary Validation) </b>To visualize the 4-channel quantum feature maps and run the lightweight local CNN:
 
 ```Bash
 cd step2_hybrid_asr/custom_pytorch_validation
