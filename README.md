@@ -65,7 +65,7 @@ It is highly recommended to use a virtual environment (like `venv` or `conda`) t
 
 ```bash
 # 1. Clone the repository
-git clone [https://github.com/Sarthak-Shaurya/QML.git](https://github.com/Sarthak-Shaurya/QML.git)
+git clone https://github.com/Sarthak-Shaurya/QML.git
 cd QML
 
 # 2. Create and activate a virtual environment (Linux/Mac)
