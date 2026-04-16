@@ -94,17 +94,18 @@ python download_data.py     # Downloads the required data
 python plot_qvision.py      # Generates 'quantum_vision.png'
 python train_hybrid.py      # Runs the Left vs. Right binary classification
 ```
-### B. Running the 10-Class Cloud Benchmark (Authors' Baseline)
+### B. Running the 10-Class Cloud Benchmark 
 
 This section replicates the core sequence-learning phase (Phase B) of the ICASSP 2021 benchmark. It utilizes a classical Recurrent Neural Network (Bi-LSTM with Softmax Attention) to classify the 4-channel quantum spatial tensors extracted during Phase A.
 
 #### 1. Download the Preprocessed Quantum Tensors
-To avoid exceeding GitHub's file size limits, the preprocessed quantum dataset (`.npy` files) is not hosted directly in this repository. 
-* Download the preprocessed dataset from the original authors' repository [here](https://github.com/huckiyang/QuantumSpeech-QCNN).
-* Extract the dataset and place the `.npy` files into the `step2_hybrid_asr/authors_baseline/data/` directory.
+To avoid exceeding GitHub's file size limits, the massive preprocessed quantum dataset (`.npy` files) is hosted externally.
+
+* Download the preprocessed dataset archive from our Google Drive **[here](https://drive.google.com/file/d/1hdu2px3-bTp2C1JJ62irI62o60f99iLy/view?usp=sharing)**.
+* Extract the archive and place the `.npy` files directly into the `step2_hybrid_asr/baseline/data/` directory.
 
 #### 2. Patch the Legacy Code for Modern TensorFlow (2.14+)
-The original authors' code was written for an older version of Keras. Before running the training pipeline, you must apply the following hotfixes to update the optimizer arguments and model saving formats:
+The original authors' code was written for an older version of Keras. Before running the training pipeline, you must apply the following hotfixes to update the optimizer arguments and model-saving formats:
 
 ```bash
 cd step2_hybrid_asr/baseline
