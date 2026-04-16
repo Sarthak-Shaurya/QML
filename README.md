@@ -85,7 +85,8 @@ python classifier.py
 Expected Output: Generates classification boundaries achieving ~0.9074 AUC on the Wisconsin Breast Cancer dataset.
 
 <b> Step 2: Execute the Hybrid ASR Pipeline</b> <br>
-<b>A. Local Prototype (PyTorch Binary Validation) </b>To visualize the 4-channel quantum feature maps and run the lightweight local CNN:
+### A. Local Prototype (PyTorch Binary Validation)
+To visualize the 4-channel quantum feature maps and run the lightweight local CNN:
 
 ```Bash
 cd step2_hybrid_asr/custom_pytorch_validation
@@ -106,7 +107,7 @@ To avoid exceeding GitHub's file size limits, the preprocessed quantum dataset (
 The original authors' code was written for an older version of Keras. Before running the training pipeline, you must apply the following hotfixes to update the optimizer arguments and model saving formats:
 
 ```bash
-cd step2_hybrid_asr/authors_baseline
+cd step2_hybrid_asr/baseline
 
 # Fix the model saving format from legacy .hdf5 to modern .keras
 sed -i 's/\.hdf5/\.keras/g' main_qsr.py
@@ -117,13 +118,7 @@ sed -i 's/lr=/learning_rate=/g' models.py
 # Run the model
 python main_qsr.py
 ```
-<b> B. Full 10-Class Cloud Benchmark (Keras Bi-LSTM)</b> (Requires the full extracted tensor dataset placed in the data_quantum/ directory)
 
-```Bash
-cd step2_hybrid_asr/authors_baseline
-python main_qsr.py --sr 16000 --mel 1
-```
-Expected Output: 94 steps/epoch, converging to >90.0% validation accuracy by Epoch 16.
 
 <b> Step 3: MLOps Automation</b>
 To run the QAOA hyperparameter optimization solver or test the QSVM drift monitor on sample audio streams:
