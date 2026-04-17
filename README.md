@@ -38,9 +38,9 @@ Quantum-Hybrid-ASR/
 ├── assets/                        # Visualizations and result graphs
 │
 ├── step1_clinical_baseline/       # Step 1: Clinical Data Proof of Concept
-│   └── classifier.py       # Linear-time encoding quantum kernel SVM
+│   └── classifier.py              # Linear-time encoding quantum kernel SVM
 │
-├── step2_asr_QCNN/              # Step 2: Continuous Audio & Speech Recognition
+├── step2_asr_QCNN/                # Step 2: Continuous Audio & Speech Recognition
 │   ├── baseline/                  # (Cloud Keras) 10-Class Sequence Training
 │   │   ├── main_qsr.py            # Main training loop (Bi-LSTM / Softmax Attention)
 │   │   ├── models.py              # Classical backend architectures
@@ -49,9 +49,9 @@ Quantum-Hybrid-ASR/
 │   └── custom_validation/         # (Local PyTorch) Engineering Prototype
 │       ├── download_data.py       # Download the required data
 │       ├── extract_qfeatures.py   # Extracts features
-│       ├── train_hybrid.py        # Custom binary classification for local hardware test
-│       └── plot_qvision.py        # Generates the 4-channel Pauli-Z feature maps
-│
+│       ├── plot_qvision.py        # Generates the 4-channel Pauli-Z feature maps
+│       └── train_hybrid.py        # Custom binary classification for local hardware test
+│       
 ├── step3_mlops_automation/        # Step 3: Novelty & Pipeline Automation
 │   ├── qaoa_hpo.py                # QUBO formulated hyperparameter tuning
 │   └── qsvm_monitor.py            # Real-time out-of-distribution audio flagging
@@ -93,8 +93,9 @@ To visualize the 4-channel quantum feature maps and run the lightweight local CN
 cd step2_hybrid_asr/custom_pytorch_validation
 python download_data.py     # Downloads the required data
 python extract_qfeatures.py # Extracts features
-python plot_qvision.py      # Generates 'quantum_vision.png'
 python train_hybrid.py      # Runs the Left vs. Right binary classification
+python plot_qvision.py      # Generates 'quantum_vision.png'
+
 ```
 ### B. Running the 10-Class Cloud Benchmark 
 
