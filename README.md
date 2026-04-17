@@ -34,6 +34,7 @@ Quantum-Hybrid-ASR/
 ├── README.md                      # Project documentation
 ├── requirements.txt               # Environment dependencies
 ├── presentation_deck.pdf          # Final presentation slides
+├── DemonstrationVideo_QML.mp4
 │
 ├── assets/                        # Visualizations and result graphs
 │
