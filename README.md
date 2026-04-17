@@ -130,6 +130,11 @@ To run the QAOA hyperparameter optimization solver or test the QSVM drift monito
 ```Bash
 cd step3_mlops_automation
 python qaoa_hpo.py
+# 1. Create a data directory in step 3
+mkdir -p data
+
+# 2. Copy the quantum_features folder from step 2 into step 3's data folder
+cp -r ../step2_asr_QCNN/custom_validation/data/quantum_features data/
 python qsvm_monitor.py
 ```
 
