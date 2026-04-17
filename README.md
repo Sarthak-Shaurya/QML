@@ -105,7 +105,7 @@ This section replicates the core sequence-learning phase (Phase B) of the ICASSP
 To avoid exceeding GitHub's file size limits, the massive preprocessed quantum dataset (`.npy` files) is hosted externally.
 
 * Download the preprocessed dataset archive from our Google Drive **[here](https://drive.google.com/file/d/1hdu2px3-bTp2C1JJ62irI62o60f99iLy/view?usp=sharing)**.
-* Extract the archive and place the `.npy` files directly into the `step2_hybrid_asr/baseline/data/` directory.
+* Extract the archive and place the `.npy` files directly into the `step2_hybrid_asr/baseline/data_quantum/` directory.
 
 #### 2. Patch the Legacy Code for Modern TensorFlow (2.14+)
 The original authors' code was written for an older version of Keras. Before running the training pipeline, you must apply the following hotfixes to update the optimizer arguments and model-saving formats:
