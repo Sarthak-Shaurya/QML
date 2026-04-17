@@ -118,7 +118,7 @@ sed -i 's/\.hdf5/\.keras/g' main_qsr.py
 
 # Fix the deprecated learning rate argument in the optimizer
 sed -i 's/lr=/learning_rate=/g' models.py
-
+pip install tqdm # install if not already installed
 # Run the model
 python main_qsr.py
 ```
