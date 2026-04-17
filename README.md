@@ -40,14 +40,15 @@ Quantum-Hybrid-ASR/
 ├── step1_clinical_baseline/       # Step 1: Clinical Data Proof of Concept
 │   └── classifier.py       # Linear-time encoding quantum kernel SVM
 │
-├── step2_hybrid_asr/              # Step 2: Continuous Audio & Speech Recognition
-│   ├── authors_baseline/          # (Cloud Keras) 10-Class Sequence Training
+├── step2_asr_QCNN/              # Step 2: Continuous Audio & Speech Recognition
+│   ├── baseline/                  # (Cloud Keras) 10-Class Sequence Training
 │   │   ├── main_qsr.py            # Main training loop (Bi-LSTM / Softmax Attention)
-│   │   ├── models.py               # Classical backend architectures
+│   │   ├── models.py              # Classical backend architectures
 │   │   └── helper_q_tool.py       # Pennylane/Qiskit quantum circuit generator
 │   │
-│   └── custom_pytorch_validation/ # (Local PyTorch) Engineering Prototype
+│   └── custom_validation/         # (Local PyTorch) Engineering Prototype
 │       ├── download_data.py       # Download the required data
+│       ├── extract_qfeatures.py   # Extracts features
 │       ├── train_hybrid.py        # Custom binary classification for local hardware test
 │       └── plot_qvision.py        # Generates the 4-channel Pauli-Z feature maps
 │
@@ -91,6 +92,7 @@ To visualize the 4-channel quantum feature maps and run the lightweight local CN
 ```Bash
 cd step2_hybrid_asr/custom_pytorch_validation
 python download_data.py     # Downloads the required data
+python extract_qfeatures.py # Extracts features
 python plot_qvision.py      # Generates 'quantum_vision.png'
 python train_hybrid.py      # Runs the Left vs. Right binary classification
 ```
