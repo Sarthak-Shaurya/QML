@@ -90,7 +90,7 @@ Expected Output: Generates classification boundaries achieving ~0.9074 AUC on th
 To visualize the 4-channel quantum feature maps and run the lightweight local CNN:
 
 ```Bash
-cd step2_hybrid_asr/custom_pytorch_validation
+cd step2_asr_QCNN/custom_validation
 python download_data.py     # Downloads the required data
 python extract_qfeatures.py # Extracts features
 python train_hybrid.py      # Runs the Left vs. Right binary classification
@@ -111,7 +111,7 @@ To avoid exceeding GitHub's file size limits, the massive preprocessed quantum d
 The original authors' code was written for an older version of Keras. Before running the training pipeline, you must apply the following hotfixes to update the optimizer arguments and model-saving formats:
 
 ```bash
-cd step2_hybrid_asr/baseline
+cd step2_asr_QCNN/baseline
 
 # Fix the model saving format from legacy .hdf5 to modern .keras
 sed -i 's/\.hdf5/\.keras/g' main_qsr.py
