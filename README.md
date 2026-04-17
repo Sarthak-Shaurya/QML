@@ -52,13 +52,10 @@ Quantum-Hybrid-ASR/
 │       ├── plot_qvision.py        # Generates the 4-channel Pauli-Z feature maps
 │       └── train_hybrid.py        # Custom binary classification for local hardware test
 │       
-├── step3_mlops_automation/        # Step 3: Novelty & Pipeline Automation
-│   ├── qaoa_hpo.py                # QUBO formulated hyperparameter tuning
-│   └── qsvm_monitor.py            # Real-time out-of-distribution audio flagging
-│
-└── data_samples/                  # Sample data formats (Full dataset hosted externally)
-    ├── sample_audio.wav           
-    └── sample_tensor.npy
+└── step3_mlops_automation/        # Step 3: Novelty & Pipeline Automation
+       ├── qaoa_hpo.py                # QUBO formulated hyperparameter tuning
+       └── qsvm_monitor.py            # Real-time out-of-distribution audio flagging
+
 ```
 ## 🚀 Installation & Setup
 
