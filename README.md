@@ -14,7 +14,7 @@
 ---
 
 # 🔴 [Watch the Demonstration Video Here](https://drive.google.com/file/d/1tbqcg0HRf_b30LUEYCNaSG5H-EBfT90I/view?usp=sharing) 🔴
-# [![Watch the Demo](https://img.shields.io/badge/Watch_Demonstration_Video-FF4500?style=for-the-badge&logo=googledrive&logoColor=white)](https://drive.google.com/file/d/1tbqcg0HRf_b30LUEYCNaSG5H-EBfT90I/view?usp=sharing)
+
 
 ## 📌 Project Overview
 
