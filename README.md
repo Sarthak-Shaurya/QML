@@ -88,6 +88,7 @@ This code will take a long time to run. For a faster version, you can run <b> cl
 
 <b> Step 2: Execute the Hybrid ASR Pipeline</b> <br>
 <b> A. Local Prototype (PyTorch Binary Validation)</b>
+
 To visualize the 4-channel quantum feature maps and run the lightweight local CNN:
 
 ```Bash
@@ -99,6 +100,7 @@ python plot_qvision.py      # Generates 'quantum_vision.png'
 
 ```
 <b>B. Running the 10-Class Cloud Benchmark </b>
+
 This section replicates the core sequence-learning phase (Phase B) of the ICASSP 2021 benchmark. It utilizes a classical Recurrent Neural Network (Bi-LSTM with Softmax Attention) to classify the 4-channel quantum spatial tensors extracted during Phase A.
 
 #### 1. Download the Preprocessed Quantum Tensors
