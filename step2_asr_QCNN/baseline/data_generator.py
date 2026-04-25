@@ -13,6 +13,11 @@ sr=16000
 
 
 def gen_mel(labels, train_audio_path, sr, port):
+    """
+    Iterates through audio directories, loads 1-second .wav files, 
+    and converts them into Mel spectrogram features for model training.
+    """
+
     all_wave = []
     all_label = []
     for label in tqdm(labels):
