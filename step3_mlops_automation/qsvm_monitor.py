@@ -63,4 +63,4 @@ ax.text(0.5, 0.5, textstr, transform=ax.transAxes, fontsize=11,
 
 fig.tight_layout()
 plt.savefig('drift_results.png', dpi=300)
-print("Saved successfully! Your MLOps pipeline is now completely coded.")
+print("Saved successfully!")
