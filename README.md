@@ -83,6 +83,7 @@ pip install -r requirements.txt
 ```bash
 cd step1_clinical_baseline
 python classifier.py
+python generate_plots.py
 ```
 This code will take a long time to run. For a faster version, you can run <b> classifier_gpu.py </b> on a GPU. However, be aware that even that could take much longer than expected because many quantum circuits are being executed.
 
