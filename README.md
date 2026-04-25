@@ -41,7 +41,9 @@ Quantum-Hybrid-ASR/
 ├── assets/                        # Visualizations and result graphs
 │
 ├── step1_clinical_baseline/       # Step 1: Clinical Data Proof of Concept
-│   └── classifier.py              # Linear-time encoding quantum kernel SVM
+    ├── classifier.py              # Linear-time encoding quantum kernel SVM
+    ├── classifier_gpu.py          # Fast Version of Classifier
+│   └── generate_plots.py          # Generates Plot    
 │
 ├── step2_asr_QCNN/                # Step 2: Continuous Audio & Speech Recognition
 │   ├── baseline/                  # (Cloud Keras) 10-Class Sequence Training
@@ -56,8 +58,8 @@ Quantum-Hybrid-ASR/
 │       └── train_hybrid.py        # Custom binary classification for local hardware test
 │       
 └── step3_mlops_automation/        # Step 3: Novelty & Pipeline Automation
-       ├── qaoa_hpo.py                # QUBO formulated hyperparameter tuning
-       └── qsvm_monitor.py            # Real-time out-of-distribution audio flagging
+       ├── qaoa_hpo.py             # QUBO formulated hyperparameter tuning
+       └── qsvm_monitor.py         # Real-time out-of-distribution audio flagging
 
 ```
 
