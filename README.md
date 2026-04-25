@@ -13,6 +13,9 @@
 
 ---
 
+# The Demonstration Video can be viewed **[here](https://drive.google.com/file/d/1tbqcg0HRf_b30LUEYCNaSG5H-EBfT90I/view?usp=sharing)**.
+
+
 ## 📌 Project Overview
 
 Processing continuous, high-dimensional temporal signals (like Automatic Speech Recognition or Audio Deepfake Detection) natively on Noisy Intermediate-Scale Quantum (NISQ) devices is severely bottlenecked by limited qubit budgets and high gate error rates. 
@@ -57,7 +60,7 @@ Quantum-Hybrid-ASR/
        └── qsvm_monitor.py            # Real-time out-of-distribution audio flagging
 
 ```
-# The Demonstration Video can be viewed **[here](https://drive.google.com/file/d/1tbqcg0HRf_b30LUEYCNaSG5H-EBfT90I/view?usp=sharing)**.
+
 ## 🚀 Installation & Setup
 
 It is highly recommended to use a virtual environment (like `venv` or `conda`) to avoid conflicts between PyTorch and TensorFlow dependencies.
