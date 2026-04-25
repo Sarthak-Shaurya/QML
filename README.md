@@ -41,8 +41,8 @@ Quantum-Hybrid-ASR/
 ├── assets/                        # Visualizations and result graphs
 │
 ├── step1_clinical_baseline/       # Step 1: Clinical Data Proof of Concept
-    ├── classifier.py              # Linear-time encoding quantum kernel SVM
-    ├── classifier_gpu.py          # Fast Version of Classifier
+│   ├── classifier.py              # Linear-time encoding quantum kernel SVM
+│   ├── classifier_gpu.py          # Fast Version of Classifier
 │   └── generate_plots.py          # Generates Plot    
 │
 ├── step2_asr_QCNN/                # Step 2: Continuous Audio & Speech Recognition
