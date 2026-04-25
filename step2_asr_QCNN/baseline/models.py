@@ -76,6 +76,9 @@ def attrnn_Model(x_in, labels, ablation = False):
 
     x = L.Permute((2, 1, 3))(x)
 
+	# Acts as a bottleneck architecture to compress frequency features and 
+    # concatenate low-level and high-level representations (Skip Connections)
+    # before feeding the sequence into the RNN.
     if use_Unet == True:
         x = L.Conv2D(16, (5, 1), activation='relu', padding='same')(x)
         up = L.BatchNormalization()(x)
@@ -99,6 +102,9 @@ def attrnn_Model(x_in, labels, ablation = False):
     x = L.Bidirectional(rnn_func(64, return_sequences=True)
                         )(x)  # [b_s, seq_len, vec_dim]
 
+	# Extracts the final hidden state to use as the "query" vector.
+    # Computes a softmax score across all timesteps to weigh their importance,
+    # allowing the model to focus on the most relevant parts of the speech signal.
     xFirst = L.Lambda(lambda q: q[:, -1])(x)  # [b_s, vec_dim]
     query = L.Dense(128)(xFirst)
 
@@ -123,6 +129,9 @@ def attrnn_Model(x_in, labels, ablation = False):
 
     return model
 
+# Custom layer required for Automatic Speech Recognition (ASR).
+# CTC aligns variable-length audio input sequences with variable-length text
+# labels without requiring explicit frame-level alignment during training.
 class CTCLayer(L.Layer):
     def __init__(self, name=None):
         super().__init__(name=name)
@@ -204,6 +213,8 @@ def build_asr_model(h_feat, w_feat, ch_size = 1, volc_size = 26):
         x = L.Reshape(target_shape=new_shape, name="reshape")(x)
 
     # RNNs
+	# The Bidirectional LSTMs process the downsampled feature map 
+    # forward and backward to understand the temporal context of the audio.
     x = L.Bidirectional(L.LSTM(64, return_sequences=True))(x)
     x = L.Bidirectional(L.LSTM(64, return_sequences=True))(x)
 
