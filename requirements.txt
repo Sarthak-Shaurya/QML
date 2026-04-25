@@ -6,6 +6,11 @@ pennylane>=0.32.0
 PennyLane-qiskit>=0.32.0
 
 # ==========================================
+# PennyLane GPU Simulator Backend
+# ==========================================
+pennylane-lightning-gpu>=0.32.0
+
+# ==========================================
 # Classical Deep Learning Backends
 # ==========================================
 torch>=2.0.0          # For custom local binary validation (Phase 1)
