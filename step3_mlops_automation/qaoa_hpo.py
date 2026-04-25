@@ -101,4 +101,4 @@ ax2.text(0.02, 0.95, textstr, transform=ax2.transAxes, fontsize=11, verticalalig
 fig2.tight_layout()
 plt.savefig('qaoa_results.png', dpi=300)
 
-print("\nSaved both plots successfully! You are ready for the presentation.")
+print("\nSaved both plots successfully!")
