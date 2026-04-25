@@ -25,7 +25,8 @@ labels = [
 
 train_audio_path = '../dataset/'
 SAVE_PATH = "data_quantum/" # Data saving folder
-
+# Using argparse allows quick hyperparameter tuning and toggling of heavy 
+# processing steps without modifying the source code each time.
 parser = argparse.ArgumentParser()
 parser.add_argument("--eps", type = int, default = 30, help = "Epochs") 
 parser.add_argument("--bsize", type = int, default = 16, help = "Batch Size")
@@ -38,12 +39,12 @@ args = parser.parse_args()
 
 def gen_train(labels, train_audio_path, sr, port):
     all_wave, all_label = gen_mel(labels, train_audio_path, sr, port)
-
+    # Convert string labels into one-hot encoded vectors required for categorical crossentropy
     label_enconder = LabelEncoder()
     y = label_enconder.fit_transform(all_label)
     classes = list(label_enconder.classes_)
     y = keras.utils.to_categorical(y, num_classes=len(labels))
-
+    # Stratified split ensures equal class representation in both train and validation sets.
     from sklearn.model_selection import train_test_split
     x_train, x_valid, y_train, y_valid = train_test_split(np.array(all_wave),np.array(y),stratify=y,test_size = 0.2,random_state=777,shuffle=True)
     h_feat, w_feat, _ = x_train[0].shape
@@ -58,12 +59,15 @@ def gen_train(labels, train_audio_path, sr, port):
 def gen_quanv(x_train, x_valid, kr):
     print("Kernal = ", kr)
     q_train, q_valid = gen_qspeech(x_train, x_valid, kr)
-
+    # Quantum simulations are extremely slow. Saving these extracted features 
+    # to disk saves hours during subsequent model training runs.
     np.save(SAVE_PATH + "demo_t1.npy", q_train)
     np.save(SAVE_PATH + "demo_t2.npy", q_valid)
 
     return q_train, q_valid
 
+# Check CLI arguments to either run the heavy extraction pipelines or 
+# load pre-computed arrays from disk for rapid debugging.
 if args.mel == 1:
     x_train, x_valid, y_train, y_valid = gen_train(labels, train_audio_path, args.sr, args.port) 
 else:
@@ -80,13 +84,15 @@ else:
     q_valid = np.load(SAVE_PATH + "q_test_demo.npy")
 
 ## For Quanv Exp.
+# Stop training early if validation loss stops improving to prevent overfitting, 
+# and always save the weights of the best performing epoch.
 early_stop = EarlyStopping(monitor='val_loss', mode='min', 
                            verbose=1, patience=10, min_delta=0.0001)
 
 checkpoint = ModelCheckpoint('checkpoints/best_demo.hdf5', monitor='val_acc', 
                              verbose=1, save_best_only=True, mode='max')
 
-
+# Dynamically select the classifier architecture based on user input
 if args.net == 0:
     model = dense_Model(x_train[0], labels)
 elif args.net == 1:
