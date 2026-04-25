@@ -12,9 +12,7 @@
 * Nitesh Thalor (22116062)
 
 ---
-<span style="color:orangered">
-# The Demonstration Video can be viewed  **[here](https://drive.google.com/file/d/1tbqcg0HRf_b30LUEYCNaSG5H-EBfT90I/view?usp=sharing)**.</span>
-
+# The Demonstration Video can be viewed **<a href="https://drive.google.com/file/d/1tbqcg0HRf_b30LUEYCNaSG5H-EBfT90I/view?usp=sharing" style="color:orangered;">here</a>**.
 
 ## 📌 Project Overview
 
