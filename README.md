@@ -110,7 +110,7 @@ To avoid exceeding GitHub's file size limits, the massive preprocessed quantum d
 * Extract the archive and place the `.npy` files directly into the `step2_hybrid_asr/baseline/data_quantum/` directory.
 
 #### 2. Patch the Legacy Code for Modern TensorFlow (2.14+)
-The original authors' code was written for an older version of Keras. Before running the training pipeline, you must apply the following hotfixes to update the optimizer arguments and model-saving formats:
+The original code was written for an older version of Keras. Before running the training pipeline, you must apply the following hotfixes to update the optimizer arguments and model-saving formats:
 
 ```bash
 cd step2_asr_QCNN/baseline
