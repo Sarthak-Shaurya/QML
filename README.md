@@ -83,7 +83,7 @@ python classifier.py
 ```
 Expected Output: Generates classification boundaries achieving ~0.9074 AUC on the Wisconsin Breast Cancer dataset.
 
-This code will take a long time to run. For a faster version, you can <b> classifier_gpu.py </b> on a GPU. However, be aware that even that could take much longer than expected because many quantum circuits are being executed.
+This code will take a long time to run. For a faster version, you can run <b> classifier_gpu.py </b> on a GPU. However, be aware that even that could take much longer than expected because many quantum circuits are being executed.
 
 <b> Step 2: Execute the Hybrid ASR Pipeline</b> <br>
 ### A. Local Prototype (PyTorch Binary Validation)
